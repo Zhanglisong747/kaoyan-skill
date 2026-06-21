@@ -30,7 +30,7 @@ cp -r kaoyan-skill ~/.claude/skills/kaoyan
 
 ```
 kaoyan-skill/
-├── SKILL.md                    ← 主技能文件（10 个工具的完整定义）
+├── SKILL.md                    ← 主技能文件（11 个工具的完整定义）
 ├── plugin.json                 ← 插件元数据
 ├── README.md                   ← 本文件
 └── references/
@@ -45,7 +45,7 @@ kaoyan-skill/
 
 ---
 
-## 🛠️ 全部 10 个工具
+## 🛠️ 全部 11 个工具
 
 ### 1️⃣ `/kaoyan plan` — 智能学习规划
 
@@ -240,6 +240,24 @@ the growing power of social media, has significant implications...
 
 **用法**：`/kaoyan coach 最近学不进去怎么办`
 
+### 1️⃣1️⃣ `/kaoyan remind` — 智能定时提醒
+
+设置每日早晚学习提醒，通过微信准点推送，防止遗忘打卡。基于本地 cron 准点触发，误差比会话内提醒更小。
+
+```
+📅 定时提醒 · 已配置
+┌────────────────────────────────────────────┐
+│  ☀️ 早上  9:00 — 今日学习计划提醒           │
+│  🌙 晚上 21:00 — 今日学习打卡复盘提醒       │
+│  📌 方式：本地 cron 准点 → 微信 Bot         │
+│  📌 误差：远小于会话内 CronCreate 调度延迟  │
+└────────────────────────────────────────────┘
+```
+
+**用法**：`/kaoyan remind morning`（早间提醒）· `night`（晚间提醒）· `status`（查看状态）· `off`（关闭）
+
+**技术栈**：cli-wechat-bridge + cron.d + WeChatTransport API
+
 ---
 
 ## 🧠 核心算法
@@ -292,6 +310,7 @@ VOC       词汇障碍      5-10%
 | 遇到看不懂的长句 | `/kaoyan sentences [句子]` |
 | 冲刺期模考 | `/kaoyan mock` |
 | 学不进去想摆烂 | `/kaoyan coach` |
+| 设置早晚定时提醒 | `/kaoyan remind` |
 
 ---
 
