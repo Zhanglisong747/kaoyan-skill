@@ -33,6 +33,8 @@ kaoyan-skill/
 ├── SKILL.md                    ← 主技能文件（11 个工具的完整定义）
 ├── plugin.json                 ← 插件元数据
 ├── README.md                   ← 本文件
+├── scripts/
+│   └── install-reminder.sh     ← 定时提醒安装脚本（一键安装 cron + 微信提醒）
 └── references/
     ├── index.md                ← 参考文件索引
     ├── study-plan.md           ← 四阶段学习模型 & 时间分配策略
@@ -256,6 +258,12 @@ the growing power of social media, has significant implications...
 
 **用法**：`/kaoyan remind morning`（早间提醒）· `night`（晚间提醒）· `status`（查看状态）· `off`（关闭）
 
+**一键安装**：
+```bash
+sudo bash scripts/install-reminder.sh
+```
+脚本会自动：安装 cron、写入提醒脚本、配置定时任务、发送测试消息。
+
 **技术栈**：cli-wechat-bridge + cron.d + WeChatTransport API
 
 ---
@@ -324,6 +332,7 @@ VOC       词汇障碍      5-10%
 | `references/reading-analysis.md` | 阅读精析方法论与题型技巧库 | ~250线 |
 | `references/progress-tracking.md` | 进度追踪模板与数据看板 | ~150线 |
 | `references/spaced-repetition.md` | 艾宾浩斯间隔重复调度算法 | ~120线 |
+| `scripts/install-reminder.sh` | 定时提醒一键安装脚本 | ~130行 |
 
 ---
 
