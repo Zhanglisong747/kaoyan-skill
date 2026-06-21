@@ -1,0 +1,22 @@
+{
+  "name": "kaoyan",
+  "version": "2.0.0",
+  "description": "考研督学教练 — 智能学习规划、真题精析、错题管理、记忆曲线复习、进度追踪与数据分析",
+  "author": {
+    "name": "考研督学教练",
+    "url": "https://github.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "考研",
+    "英语",
+    "学习",
+    "督学",
+    "艾宾浩斯",
+    "错题本",
+    "阅读精析",
+    "考研英语",
+    "study",
+    "exam"
+  ]
+}

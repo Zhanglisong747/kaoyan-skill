@@ -1,0 +1,14 @@
+# User learning data (auto-generated locally)
+data/learning-data.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
