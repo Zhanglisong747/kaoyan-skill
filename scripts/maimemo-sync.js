@@ -5,7 +5,11 @@
  * 不加 --write 只查看数据，加 --write 写入 learning-data.json
  */
 
-const TOKEN = process.env.MAIMEMO_TOKEN || "REDACTED";
+const TOKEN = process.env.MAIMEMO_TOKEN;
+if (!TOKEN) {
+  console.error("❌ 请设置环境变量 MAIMEMO_TOKEN");
+  process.exit(1);
+}
 const BASE = "https://open.maimemo.com/open";
 const DATA_FILE = __dirname + "/../data/learning-data.json";
 
@@ -81,7 +85,6 @@ async function main() {
 
     data.lastCheckinDate = today;
     data.vocabProgress.lastReviewDate = today;
-    data.maimemoToken = TOKEN;
     fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2) + "\n");
     console.log("✅ 已写入 learning-data.json");
   } else {
